@@ -1,3 +1,11 @@
+/*
+This program compares the time taken by Bubble Sort, Merge Sort,
+and Quick Sort to sort a vector of random integers and a vector of structs
+each containing three integer members, all containing random values.
+Each vector contains a specified number of elements and the sort is performed
+a specified number of times (templates.h).
+*/
+
 #include "definitions.cpp"
 
 int getRand();
