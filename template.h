@@ -17,11 +17,3 @@ class cmpTime
     public:
         template <typename T> cmpTime(vector<T>& byRefVec, const int sortingAlgo);
 };
-
-class getRand
-{
-    private:
-
-    public:
-        getRand();
-};

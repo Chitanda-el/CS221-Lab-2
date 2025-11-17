@@ -1,3 +1,4 @@
+#include <iostream>
 #include <ctime>
 
 #include "Sorting Algorithms\bubbleSort.cpp"
@@ -15,9 +16,9 @@ template <typename T> cmpTime::cmpTime(vector<T>& byRefVec, const int sortingAlg
             bubbleSort(localVec);
         else if (sortingAlgo == 1)
             mergeSort(localVec, 0, localVec.size() - 1);
-        else if (sortingAlgo == 2)
-            continue;
-            // quickSort(localVec, 0, localVec.size() - 1);
+        else if (sortingAlgo == 2) {
+            quickSort(localVec, 0, localVec.size() - 1);
+        }
         auto stop = high_resolution_clock::now();
 
         duration += duration_cast<microseconds>(stop - start);

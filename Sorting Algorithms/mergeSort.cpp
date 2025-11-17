@@ -5,7 +5,6 @@
 // Merges two subarrays of arr[].
 // First subarray is arr[left..mid]
 // Second subarray is arr[mid+1..right]
-
 void merge(vector<int>& arr, int left, int mid, int right){
                          
     int n1 = mid - left + 1;
@@ -68,6 +67,10 @@ void mergeSort(vector<int>& arr, int left, int right){
 }
 
 // Merge Sort for dataStruct ///////////////////////////////////////////////////////////////////////
+
+// Merges two subarrays of arr[].
+// First subarray is arr[left..mid]
+// Second subarray is arr[mid+1..right]
 void merge(vector<dataStruct>& arr, int left, int mid, int right){
                          
     int n1 = mid - left + 1;
