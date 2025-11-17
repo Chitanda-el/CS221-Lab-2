@@ -1,6 +1,6 @@
 #include "..\template.h"
 
-// Bubble Sort on a single vector of ints
+// Bubble Sort on a single vector of ints //////////////////////////////////////////////////////////
 void bubbleSort(vector<int>& arr) {
     int n = arr.size();
     bool swapped;
@@ -19,42 +19,22 @@ void bubbleSort(vector<int>& arr) {
     }
 }
 
-// Bubble sort on each int member of dataStruct independently
-void bubbleSort(vector<dataStruct>& arr) {
-    int n = arr.size();
+// Bubble sort on each int member of dataStruct independently //////////////////////////////////////
+void bubbleSort(vector<dataStruct>& localVec) {
+    int n = localVec.size();
     bool swapped;
-  
-    for (int i = 0; i < n - 1; i++) {   // Sort intOne independently
-        swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j].intOne > arr[j + 1].intOne) {
-                swap(arr[j].intOne, arr[j + 1].intOne);
-                swapped = true;
+
+    for (int intMember = 0; intMember < numIntsInStruct; ++intMember) { // Iterate through each int member
+        for (int j = 0; j < n - 1; j++) {
+            swapped = false;
+            for (int k = 0; k < n - j - 1; k++) {
+                if (*(&localVec[k].intOne + intMember) > *(&localVec[k + 1].intOne + intMember)) {
+                    swap(*(&localVec[k].intOne + intMember), *(&localVec[k + 1].intOne + intMember));
+                    swapped = true;
+                }
             }
+            if (!swapped)   // If no two elements were swapped, then break
+                break;
         }
-        if (!swapped)   // If no two elements were swapped, then break
-            break;
-    }
-    for (int i = 0; i < n - 1; i++) {   // Sort intTwo independently
-        swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j].intTwo > arr[j + 1].intTwo) {
-                swap(arr[j].intTwo, arr[j + 1].intTwo);
-                swapped = true;
-            }
-        }
-        if (!swapped)   // If no two elements were swapped, then break
-            break;
-    }
-    for (int i = 0; i < n - 1; i++) {   // Sort intThree independently
-        swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j].intThree > arr[j + 1].intThree) {
-                swap(arr[j].intThree, arr[j + 1].intThree);
-                swapped = true;
-            }
-        }
-        if (!swapped)   // If no two elements were swapped, then break
-            break;
     }
 }

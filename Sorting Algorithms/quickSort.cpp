@@ -75,9 +75,7 @@ template <typename T> void quickSort(vector<T>& localVec, int low, int high)
 {
     if (is_same_v<T, int>) {
         quickSort(localVec, low, high);
-    } else if (is_same_v<T, dataStruct>) {
-        quickSort(localVec, low, high, 0);  // Last parameter specifies which member
-        quickSort(localVec, low, high, 1);  // of dataStruct to sort;
-        quickSort(localVec, low, high, 2);  // 0 = intOne, 1 = intTwo, 2 = intThree
-    }
+    } else if (is_same_v<T, dataStruct>)
+        for (int intNum = 0; intNum < numIntsInStruct; ++intNum) // Last parameter specifies which member of dataStr-
+            quickSort(localVec, low, high, intNum);              // uct to sort; 0 = intOne, 1 = intTwo, 2 = intThree
 }
